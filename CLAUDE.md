@@ -28,6 +28,7 @@ Read `references/3ms-framework.md` once. It's how {{Your Name}} thinks about AI 
 - `brainstorms/` - Dated interview captures and resume points. Read relevant captures on demand; confirmed current context belongs in its canonical page.
 - `audits/` — dated audit reports and finding history; point-in-time evidence, not live business state
 - `archives/` — old stuff. Don't delete. Move here.
+- **Roast Room** (separate repo, https://github.com/mauriciohermosillo/roast-room): council of seven simulated advisors that debates a hard business decision and returns a scored verdict. Use when I bring a decision (pricing, hiring, raising money, a pivot). Clone it, run `npm start`, then `/roast-room <decision>` inside that repo (entry point: its `CLAUDE.md`). Saved councils live in its `sessions/`.
 
 See `EXPANSIONS.md` for what to add as you grow.
 
