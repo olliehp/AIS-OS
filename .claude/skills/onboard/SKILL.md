@@ -16,6 +16,12 @@ Single combined wizard. Reads or writes `aios-intake.md` (the canonical intake),
 
 ## Execution
 
+### Existing projects and portable installation
+
+Read the applicable `AGENTS.md` and `CLAUDE.md` first. The paths below are starter-kit defaults; use an established project's equivalent canonical context, voice, and connection sources instead of creating parallel sources of truth. Preserve unrelated operating rules and routing, and synchronize shared manual edits where required. Onboarding updates selected personal context, not the entire operating manual.
+
+If `aios-intake.md` is missing, use the bundled [intake template](assets/aios-intake.md). Populate only answers explicitly supported by existing sources, with references; leave unknowns for the interview. Installing this skill does not itself run onboarding or change the user's context.
+
 ### Step 1: Read the intake
 
 Read `aios-intake.md`. Check which Q1-Q7 sections have content vs. `[Your answer here]` placeholders.
@@ -64,7 +70,7 @@ Once the intake is complete, generate these files (or update if re-running). Bac
 3. **`context/priorities.md`** — from Q3. Numbered list, one line per priority.
 4. **`references/voice.md`** — from Q2. Paste samples verbatim with a short header explaining their use ("Match this register when drafting; don't fake voice on external content without showing me first").
 5. **`connections.md`** — populate the 7-row table from Q4-Q7 answers. Each row gets `mechanism: not yet connected`, `auth: —`, `last checked: —`. The user wires connections on Day 2.
-6. **`CLAUDE.md`** — fill all `{{...}}` placeholders. Substitute the user's name, stated priority, voice register summary, and a brief connections summary.
+6. **Operating manual (`AGENTS.md` / `CLAUDE.md`)**: fill applicable `{{...}}` placeholders with the user's name, priority, voice summary, and connections summary. In an established manual, update only the selected context or its route; preserve other instructions. Keep shared guidance synchronized when required by the project.
 
 ### Step 4: The closing screen
 
@@ -92,7 +98,7 @@ The Default Shift question seeds the Mindset framework before `/level-up` formal
 3. **One-shot scaffold.** After Step 2 ends, write Step 3 files in a single batch. No multi-turn confirmation. The user iterates by editing `aios-intake.md` and re-running.
 4. **Idempotent.** Re-running with an edited intake refreshes context files; backs up originals to `archives/intake-{ts}/`. Skips questions already answered unless the user wants to revise.
 5. **Closing screen is three lines.** Not a menu.
-6. **No extra skills generated.** Don't scaffold `/today`, `/draft`, `/connect`, etc. The kit ships 3 skills; the user authors more via `/level-up`.
+6. **No extra skills generated.** Don't scaffold `/today`, `/draft`, `/connect`, etc. The kit ships four skills: `/onboard`, `/audit`, `/level-up`, and `/link`; the user authors more via `/level-up`.
 7. **Read-only on `references/3ms-framework.md`.** It already ships in the kit. Don't overwrite.
 8. **No `.env` writes.** Don't ask for API keys on Day 1. Connections come Day 2.
 
